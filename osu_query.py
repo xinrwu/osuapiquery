@@ -94,13 +94,9 @@ class BeatmapInfo:
         beatmap_data["creator"] = self.get_creator()
         beatmap_data["version"] = self.get_difficulty_name()
         beatmap_data["star"] = self.get_star_rating()
-        if mod is "doubletime":
-            print mod
-            beatmap_data["drain"] = self.get_drain_time()/1.5
-            beatmap_data["length"] = self.get_total_length()/1.5
-        else:
-            beatmap_data["drain"] = self.get_drain_time()
-            beatmap_data["length"] = self.get_total_length()
+        beatmap_data["drain"] = self.get_drain_time()
+        beatmap_data["length"] = self.get_total_length()
+        beatmap_data["bpm"] = self.get_bpm()
         beatmap_data["type"] = mod
         return beatmap_data
 
